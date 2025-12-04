@@ -1,0 +1,32 @@
+services:
+  agent:
+    build: .
+    container_name: agent
+    ports:
+      - "2024:2024"
+    volumes:
+      - .:/app
+      - ./knowledge_base:/knowledge_base
+      - ./knowledge_base/reports:/reports
+    environment:
+      - PYTHONPATH=/app
+    env_file:
+      - .env
+    depends_on:
+      - kali
+    command: langgraph dev --host 0.0.0.0 --port 2024
+
+  kali:
+    build: ./kali_server
+    container_name: kali
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    privileged: true
+    volumes:
+      - ./kali_server/kali_server_fastapi.py:/root/app/kali_server_fastapi.py
+    ports:
+      - "5000:5000"
+    working_dir: /root/app
+    command: >
+      bash -c "python kali_server_fastapi.py"

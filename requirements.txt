@@ -1,0 +1,16 @@
+langchain~=1.0.4
+langgraph~=1.0.2
+langchain-openai~=1.1.0
+fastapi~=0.121.0
+langgraph-cli[inmem]
+deepagents~=0.2.5
+aiofiles~=24.1.0
+
+python-dotenv~=1.2.1
+pydantic~=2.12.4
+httpx~=0.28.1
+PyYAML~=6.0.3
+typing_extensions~=4.15.0
+requests~=2.32.5
+uvicorn~=0.38.0
+langchain-core~=1.1.0

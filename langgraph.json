@@ -1,0 +1,9 @@
+{
+  "$schema": "https://langgra.ph/schema.json",
+  "dependencies": ["."],
+  "graphs": {
+    "agent": "src/agent/composer/deep_agent_composer.py:ctf_deepagents"
+  },
+  "env": ".env",
+  "image_distro": "wolfi"
+}
