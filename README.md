@@ -32,7 +32,7 @@ SickHackShark 设计用于自动化完成CTF网络安全竞赛中的Web挑战。
 
 1. 克隆项目仓库：
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/SickHackPark/SickHackShark.git
    cd SickHackShark
    ```
 
@@ -69,8 +69,8 @@ SickHackShark 设计用于自动化完成CTF网络安全竞赛中的Web挑战。
    ```
 
 4. 访问服务：
-   API服务将在 `http://127.0.0.1:2024` 上运行
-   UI服务请访问 `https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024`
+   API服务请访问: `http://127.0.0.1:2024`
+   UI服务请访问: `https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024`
 
 ### 停止服务
 
