@@ -101,8 +101,8 @@ ctf_deepagents.yaml 是 SickHackShark 的核心配置文件，用于定义Agent�
 配置文件系统后端：
 ```yaml
 filesystem_backend:
-  route: "/app/knowledge_base/"     # 路由路径
-  root_dir: "/app/knowledge_base"   # 根目录
+  route: "/knowledge_base/"     # 路由路径
+  root_dir: "/app/knowledge_base/"   # 根目录
   virtual_mode: false           # 是否启用虚拟模式
 ```
 
