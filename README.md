@@ -208,3 +208,41 @@ middleware:
    - 在其他Agent确认漏洞但未找到flag时调用
 
 通过合理配置ctf_deepagents.yaml，可以定制化SickHackShark的行为，适应不同类型的CTF挑战。
+
+
+## 项目结构
+
+```
+.
+├── kali_server                   # Kali Linux工具服务端
+│   ├── Dockerfile                # Kali服务Docker镜像配置
+│   └── kali_server_fastapi.py    # Kali工具FastAPI服务实现
+├── src/agent                     # Agent核心代码目录
+│   ├── common                    # 通用配置和工具
+│   │   ├── config.py             # 系统配置管理
+│   │   └── utils.py              # 通用工具函数
+│   ├── composer                  # Agent编排器
+│   │   ├── config_example.yaml   # 配置示例文件
+│   │   ├── ctf_deepagents.yaml   # CTF任务默认配置文件
+│   │   └── deep_agent_composer.py# Agent编排器实现
+│   ├── middleware                # 中间件组件
+│   │   ├── important_notes.py    # 重要笔记中间件
+│   │   └── long_chain_wake_up.py # 长链唤醒中间件
+│   ├── models                   # 数据模型定义
+│   │   └── agent_response.py     # Agent响应数据模型
+│   └── tools                    # Agent可用工具
+│       ├── http_request.py       # HTTP请求工具
+│       ├── kali.py               # Kali工具调用接口
+│       └── python_code.py        # Python代码执行工具
+├── tests                        # 测试代码目录
+│   ├── integration_tests         # 集成测试
+│   │   └── test_graph.py         # 图形执行测试
+│   └── unit_tests                # 单元测试
+│       └── test_configuration.py # 配置测试
+├── Dockerfile                   # 主服务Docker镜像配置
+├── Makefile                     # 项目构建和管理脚本
+├── docker-compose.yml           # Docker服务编排配置
+├── langgraph.json               # LangGraph配置文件
+├── pyproject.toml               # Python项目配置
+└── requirements.txt             # Python依赖列表
+```
